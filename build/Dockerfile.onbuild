@@ -1,0 +1,23 @@
+FROM mhoush/connexion
+
+ENV DEBUG=false
+
+ADD . /app
+
+WORKDIR /app
+
+ONBUILD ARG APP_NAME="api"
+ONBUILD ARG APP_VERSION="0.0.1"
+ONBUILD ARG APP_PORT=8080
+
+ONBUILD ENV APP_PORT=$APP_PORT
+
+ONBUILD COPY orm /app/api/orm
+ONBUILD COPY api.yml /app/config/api.yml
+
+ONBUILD RUN /bin/sh /app/install.sh --name $APP_NAME \
+    --version $APP_VERSION && \
+    rm -rf /app/install.sh
+
+CMD ["/usr/local/bin/uwsgi", "--yaml", "config/uwsgi.yml"]
+

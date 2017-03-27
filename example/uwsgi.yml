@@ -1,0 +1,7 @@
+uwsgi:
+  http: :$(APP_PORT)
+  module: api.app
+  enable-threads: true
+  gevent: 4
+  master: true
+  vacuum: true

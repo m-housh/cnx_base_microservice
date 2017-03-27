@@ -1,0 +1,3 @@
+{
+  "tests/test_equipment_api.py::test_get_meta_detail": true
+}

@@ -1,0 +1,11 @@
+# uwsgi config, default is to listen on a TCP socket,
+# at ``APP_PORT`` environment variable. Which is best when used behind
+# an api-gateway, such as ``nginx``.
+#
+# See example on how to override to use an http port.
+uwsgi:
+  socket: :$(APP_PORT) 
+  module: api.app
+  enable-threads: true
+  gevent: 4
+  master: true
