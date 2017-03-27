@@ -1,5 +1,5 @@
-cnx_base_app
-============
+cnx_base_microservice
+=====================
 
 A docker image that allows to quickly create a microservice with the boiler-plate
 builtin.
@@ -8,7 +8,12 @@ Just create an *api.yml* file to use for the swagger definition and a python
 package to mount to ``/app/api/orm`` that includes the database model(s) and
 api methods defined in the *api.yml* file. 
 
-Packages Included
+This image is designed to be used with a postgres database backend.  The default
+link name is ``postgres``, but can be overriden with environment variables.
+
+See ``build/api/config.py`` for the environment variable options.
+
+Included Packages
 -----------------
 
 **Base Image:** python:alpine (3.6.0)  
