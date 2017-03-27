@@ -1,4 +1,4 @@
-FROM mhoush/cnx_base_app:onbuild
+FROM mhoush/cnx_base_microservice:onbuild
 
 # uwsgi socket name that is written to /var/run/<API_SOCKET_NAME>.sock
 # good if using an application gateway, that can connect to a unix socket.
