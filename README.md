@@ -11,16 +11,17 @@ api methods defined in the *api.yml* file.
 Packages Included
 -----------------
 
-**Base Image:** python:alpine (3.6.0)
-**Python Packages**:
-    - connexion==1.1.5
-    - sqlalchemy==1.1.5
-    - psycopg2==2.7
-    - connexion_sql_utils==0.1.2
-    - gevent==1.2.1
-    - uwsgi==2.0.14
-**Additional Packages**: make
+**Base Image:** python:alpine (3.6.0)  
 
+**Python Packages**:  
+- connexion==1.1.5  
+- sqlalchemy==1.1.5
+- psycopg2==2.7
+- connexion_sql_utils==0.1.2
+- gevent==1.2.1
+- uwsgi==2.0.14  
+
+**Additional Packages**: make  
 
 Usage
 -----
@@ -52,13 +53,15 @@ behind an *api-gateway* such as *nginx*.  However for testing it can often
 be nice to listen for *http* requests, which is when you should add your own
 *uwsgi.yml* file.
 
-
-OnBuild-args
+ONBUILD-Args
 ------------
 
-**APP_NAME:**  A custom name for the python setup.py script (defaults to api)
-**APP_VERSION:**  A custom version for the python setup.py script (defaults to 0.0.1)
-**APP_PORT:**  A custom port to use for the uwsgi socket. (defaults to 8080)
+The following options can be used when building your dockerfile with the
+``--build-arg APP_NAME=example`` syntax.  
+
+- **APP_NAME:**  A custom name for the python setup.py script (defaults to api)
+- **APP_VERSION:**  A custom version for the python setup.py script (defaults to 0.0.1)
+- **APP_PORT:**  A custom port to use for the uwsgi socket. (defaults to 8080)
 
 License
 -------
